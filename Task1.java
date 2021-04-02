@@ -20,10 +20,6 @@ public class  Task1 {
 		Scanner sc = new Scanner(System.in);
 		int[][] dfa = dfa(sc.next());
 
-		// for(int i=0;i<dfa.length;i++) {
-		// System.out.println(dfa[i][0]+" "+dfa[i][1]);
-		// }
-		// System.out.println(accepted.toString());
 
 		while (true) {
 			String test = sc.next();
