@@ -22,6 +22,7 @@ public class Task2 {
 		ArrayList<Integer>[] episClosure = new ArrayList[max + 1];
 		HashSet<Integer> accep = new HashSet<>();
 
+		
 		for (int i = 0; i < max + 1; i++) {
 			for (int j = 0; j < 2; j++) {
 				firstTable[i][j] = new ArrayList<>();
