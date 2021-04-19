@@ -10,14 +10,14 @@ import java.util.StringTokenizer;
 public class Task4 {
 	public static HashSet<Integer> accepted;
 	public static String actions[];
-	
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String s = sc.next();
 
 		// get actions array
 		int max = getMax(s);
-	    actions = new String[max + 1];
+		actions = new String[max + 1];
 
 		StringTokenizer st = new StringTokenizer(s, "#");
 		String firPart = st.nextToken();
@@ -36,22 +36,25 @@ public class Task4 {
 		int[][] fdfa = fdfa(s, max);
 
 		run(fdfa);
-		
+
 	}
 
 	public static void run(int[][] fdfa) {
 		Scanner sc = new Scanner(System.in);
 		while (true) {
 			String path = sc.next();
-            int orig = path.length();
+			int orig = path.length();
 			while (true) {
 
 				Stack<Integer> stack = new Stack<>();
 				int current = 0;
 				stack.add(current);
+				int first = -1;
 				for (int i = 0; i < path.length(); i++) {
 					current = fdfa[current][Integer.parseInt("" + path.charAt(i))];
 					stack.add(current);
+
+					first = current;
 				}
 
 				int backStep = 0;
@@ -65,31 +68,30 @@ public class Task4 {
 				if (path.length() - backStep > 0) {
 					path = path.substring(path.length() - backStep);
 				}
-				
-				
 
 				// System.out.println(path);
 
 				if (!stack.isEmpty())
 					System.out.print(actions[stack.pop()]);
 
-				
 				if (path.length() == 0)
 					break;
-				
-				if(path.length()==orig) {
-					System.out.println("no action at all");
+
+				if (path.length() == orig) {
+					System.out.println(actions[first]);
 					break;
 				}
-					
-				if(old.equals(path))
+
+				if (old.equals(path)) {
+					System.out.println(actions[first]);
 					break;
+				}
 
 			}
 			System.out.println();
 		}
 	}
-	
+
 	public static int[][] fdfa(String description, int max) {
 		accepted = new HashSet<>();
 
