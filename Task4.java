@@ -136,10 +136,14 @@ public class Task4 {
 		while (st.hasMoreTokens()) {
 			String unit = st.nextToken();
 			StringTokenizer stu = new StringTokenizer(unit, ",");
+			int count =0;
 			while (stu.hasMoreTokens()) {
+				if(count>=3)
+					break;
 				int cur = Integer.parseInt(stu.nextToken());
 				if (stu.hasMoreTokens())
 					max = Math.max(max, cur);
+			  count++;
 			}
 		}
 		return max;
