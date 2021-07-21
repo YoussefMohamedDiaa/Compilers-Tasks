@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-public class  Task1 {
+public class  RunDFA {
 
 	public static HashSet<Integer> accepted;
 
