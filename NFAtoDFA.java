@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 
 import compilers.Task1.Scanner;
 
-public class Task2 {
+public class NFAtoDFA {
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		String s = sc.next();
