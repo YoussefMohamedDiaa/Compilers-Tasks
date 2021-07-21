@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class Task4 {
+public class FallBackDFA {
 	public static HashSet<Integer> accepted;
 	public static String actions[];
 
